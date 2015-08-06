@@ -117,9 +117,9 @@ inputs:
     mapped_to: XCODE_BUILDER_UNITTEST_PLATFORM_NAME
     title: "[UNITTEST] Device to run the tests with"
     description: |
-      Will be appended to the "platform=iOS Simulator,name=" `-destination` flag
+      Will passed to the `-destination` flag
       of the xcodebuild command.
-      Default is "iPad".
+      Default is "platform=iOS Simulator,name=iPad".
       For other simulator devices set it as it is shown in
       Xcode's device selection dropdown UI.
 
@@ -135,7 +135,7 @@ inputs:
       * iPad Retina (64-bit)
 
       Used only if `XCODE_BUILDER_ACTION=unittest`.
-    value: "iPad"
+    value: "platform=iOS Simulator,name=iPad"
     is_expand: false
 outputs:
 # if XCODE_BUILDER_ACTION=build
