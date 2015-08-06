@@ -228,11 +228,10 @@ if [[ "${XCODE_BUILDER_ACTION}" == "archive" ]] ; then
 fi
 
 if [[ "${XCODE_BUILDER_ACTION}" == "unittest" ]] ; then
-  CONFIG_unittest_simulator_name="iPad"
+  CONFIG_unittest_device_destination="platform=iOS Simulator,name=iPad"
   if [ -n "$XCODE_BUILDER_UNITTEST_PLATFORM_NAME" ]; then
-    CONFIG_unittest_simulator_name="$XCODE_BUILDER_UNITTEST_PLATFORM_NAME"
+    CONFIG_unittest_device_destination="$XCODE_BUILDER_UNITTEST_PLATFORM_NAME"
   fi
-  CONFIG_unittest_device_destination="platform=iOS Simulator,name=${CONFIG_unittest_simulator_name}"
   echo " (i) UnitTest Device Destination: ${CONFIG_unittest_device_destination}"
 fi
 
